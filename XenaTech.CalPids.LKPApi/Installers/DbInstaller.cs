@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using XenaTech.CalPids.LKPApi.Data;
@@ -14,11 +13,8 @@ namespace XenaTech.CalPids.LKPApi.Installers
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<DataContext>();
 
-            services.AddScoped<IPostService, PostService>();
+            services.AddScoped<ILastKnownPositionService, LastKnownPositionService>();
         }
     }
 }

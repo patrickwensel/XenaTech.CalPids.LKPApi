@@ -1,51 +1,73 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace XenaTech.CalPids.LKPApi.Domain
 {
+    [Table("LKP")]
     public class LKP
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [MaxLength(50)]
         public string ID { get; set; }
+
+        [Required]
         public int CarNum { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Protocol { get; set; }
+
+        [Required]
+        public int Date { get; set; }
+
+        [Required]
+        [Column(TypeName = "float")]
+        public double Time { get; set; }
+
+        [Required]
+        [Column(TypeName = "float")]
+        public double Latitude { get; set; }
+
+        [Required]
+        [Column(TypeName = "float")]
+        public double Longitude { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Speed { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Bearing { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string SatellitesInUse { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string HDOP { get; set; }
+
+        [Required]
+        [Column(TypeName = "datetime2")]
+        public DateTime DBTime { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Corridor { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string MileMarker { get; set; }
+
+        [Required]
+        [Column(TypeName = "float")]
+        public double TrackPointNumber { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Direction { get; set; }
     }
 }
-
-
-//[ID] [nvarchar] (50) NOT NULL,
-
-// [CarNum] [int]
-//NOT NULL,
-
-// [Protocol] [nvarchar] (50) NOT NULL,
-
-//  [Date] [int]
-//NOT NULL,
-
-//  [Time] [float]
-//NOT NULL,
-
-//  [Latitude] [float]
-//NOT NULL,
-
-//  [Longitude] [float]
-//NOT NULL,
-
-//  [Speed] [nvarchar] (50) NOT NULL,
-
-//   [Bearing] [nvarchar] (50) NOT NULL,
-//	[SatellitesInUse] [nvarchar] (50) NOT NULL,
- 
-//	 [HDOP] [nvarchar] (50) NOT NULL,
-  
-//	  [DBTime] [datetime2] (7) NOT NULL,
-   
-//	   [Corridor] [nvarchar] (50) NOT NULL,
-	
-//		[MileMarker] [nvarchar] (50) NOT NULL,
-	 
-//		 [TrackPointNumber] [float]
-//NOT NULL,
-	 
-//		 [Direction] [nvarchar] (50) NOT NULL,
