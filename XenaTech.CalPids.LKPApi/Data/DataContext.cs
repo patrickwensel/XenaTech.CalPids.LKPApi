@@ -11,6 +11,8 @@ namespace XenaTech.CalPids.LKPApi.Data
         {
         }
 
+        public DbSet<LKP> LKPs { get; set; }
+
         public DbSet<Post> Posts { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
