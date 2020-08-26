@@ -14,7 +14,12 @@ namespace XenaTech.CalPids.LKPApi.Installers
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<XtCalPidsDbContext>(options =>
+                options.UseSqlServer(
+                    configuration.GetConnectionString("XtCalPidsConnection")));
+
             services.AddScoped<ILastKnownPositionService, LastKnownPositionService>();
+            services.AddScoped<ITripLkpService, TripLkpService>();
         }
     }
 }

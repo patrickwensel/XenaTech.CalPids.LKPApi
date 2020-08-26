@@ -9,6 +9,7 @@ namespace XenaTech.CalPids.LKPApi.MappingProfiles
         public DomainToResponseProfile()
         {
             CreateMap<LKP, LastKnownPositionResponse>();
+            CreateMap<TripLkp, TripLkpResponse>();
         }
     }
 }

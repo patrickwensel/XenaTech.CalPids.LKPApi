@@ -12,5 +12,10 @@
         {
             public const string GetAll = Base + "/last-known-positions";
         }
+
+        public static class TripLkps
+        {
+            public const string GetAll = Base + "/trip-lkps";
+        }
     }
 }
